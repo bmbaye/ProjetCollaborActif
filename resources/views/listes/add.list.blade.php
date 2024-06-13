@@ -2,7 +2,7 @@
 
 @section('content')
     <div class="add-list">
-        <form action="" class="list-down"> 
+        <form action="" class="list-down" method="post"> 
             <label for="nomliste">Nom de la liste</label>
             <input type="text" id="nomliste">  
             <input type="file" id="idFile">
@@ -11,7 +11,7 @@
         </form>
         <button class ="saisir-list">Saisir la liste</button>
         <button class ="telecharger-list">Telecharger la liste</button>
-        <form action="" class="list-type">
+        <form action="" class="list-type" method="post">
             <label for="">Nom:</label>
             <input type="text" name="" id="">
             <label for="">Prenom:</label>
