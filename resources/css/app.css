@@ -1,0 +1,546 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  }
+:root{
+    --primary-color: #0E21A8;
+    --secondary-color: #000;
+}
+  
+.header{
+    height: 170px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.menu{
+    width: 100%;
+    height: 100px;
+    background-color: var(--primary-color);
+    display: flex;
+    justify-content: space-around;
+}
+
+.menu ul{
+    width: 45%;
+    height: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    list-style: none;
+}
+
+.menu ul li{
+    background-color: #fff;
+    width: 150px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    border-radius:  10px;
+    cursor: pointer;
+}
+
+.menu ul li:hover{
+    width: 160px;
+    height: 45px;
+    background-color: #D4E3EB;
+}
+
+.menu ul li a{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    color: var(--secondary-color);
+}
+.search{
+    width: 20%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+.search input{
+    width: 200px;
+    border-radius: 10px;
+    border: none;
+    padding: 10px;
+    font-size: 24px;
+}
+.search button{
+    width: 70px;
+    height: 50px;
+    border-radius: 10px;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.contain{
+    width: 80%;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    margin-left: 10%;
+}
+
+.lists{
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 colonnes de taille égale */
+    grid-template-rows: auto; /* Hauteur automatique basée sur le contenu */
+    gap: 10px; /* Espacement entre les éléments */
+    padding-left: 100px;
+    margin-top: 50px;
+    display: none;
+}
+
+.list-item{
+    width: 250px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 40px;
+
+}
+.list-item input{
+    width: 80%;
+    height: 80%;
+    border-radius: 10px;
+    background-color: #fff;
+    font-size: 18px;
+    border: solid 1px var(--secondary-color);
+    cursor: pointer;
+}
+
+.list-item input:hover{
+    width: 85%;
+    height: 85%;
+    font-size: 20px;
+    -webkit-box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.75);
+-moz-box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.75);
+box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.75);
+border: none;
+}
+
+.list-details{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 50px;
+    display: none;
+}
+
+.list-details .delete-liste{
+    width: 120px;
+    height: 40px;
+    align-self: flex-end;
+    border: solid 1px red;
+    border-radius: 10px;
+    background-color: #fff;
+    font-size: 18px;
+    color: red;
+    cursor: pointer;
+}
+.list-options{
+    width: 70%;
+    height: 50px;
+    display: flex;
+    justify-content: space-between;
+    margin-left: 10%;
+    border-bottom: solid 2px grey;
+    margin-bottom: 20px;
+}
+
+.list-options a{
+    font-size: 36px;
+    text-decoration: none;
+    color: var(--secondary-color);
+    width: 45%;
+    display: flex;
+    justify-content: center;
+    background-color: rgb(241, 238, 238);
+}
+
+.groupes{
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 3 colonnes de taille égale */
+    grid-template-rows: auto; /* Hauteur automatique basée sur le contenu */
+    gap: 10px; /* Espacement entre les éléments */
+    padding-left: 100px;
+    display: none;
+}
+
+.showed-groups{
+    display: grid;
+}
+.active{
+    border-bottom: solid 2px var(--primary-color);
+}
+.groupe{
+    width: 500px;
+    border-collapse: collapse;
+    margin-bottom: 30px;
+}
+caption{
+    padding: 5px;
+    text-align: center;
+    font-weight: 600;
+}
+thead th {
+    padding: 10px;
+    border: 2px solid black; 
+}
+tbody tr td {
+    border: 1px solid #ddd;
+    text-align: center;
+}
+
+.membres{
+    width: 100%;
+    padding-left: 100px;
+    display: none;
+}
+
+.showed-members{
+    display: block  ;
+}
+
+.tab-membres{
+    width: 90%;
+    border-collapse: collapse;
+    margin-bottom: 30px;
+}
+
+.del-member, .update-member{
+    width: 80px;
+    height: 20px;
+    align-self: flex-end;
+    border-radius: 10px;
+    background-color: #fff;
+    font-size: 12px;
+    cursor: pointer;
+}
+
+.del-member{
+    color: red;
+    border: solid 1px red;
+}
+.update-member{
+    color: var(--primary-color);
+    border: solid 1px var(--primary-color);
+}
+
+.add-member{
+    width: 120px;
+    height: 40px;
+    align-self: flex-end;
+    border: solid 1px var(--secondary-color);
+    border-radius: 10px;
+    background-color: #fff;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--secondary-color);
+    cursor: pointer;
+    margin-bottom: 20px;
+    align-self: flex-end;
+}
+
+.add-list{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: 50px;
+    padding: 50px;
+    margin-top: 50px;
+    border: solid 2px var(--primary-color);
+    border-radius: 10px;
+}
+
+.add-list form input{
+    width: 100%;
+}
+
+#idFile{
+    width: 118px;
+    display: felx;
+    justify-content: center;
+    border: none;
+    border-radius: 0;
+}
+
+
+.nom-list input{
+    width: 250px;
+    border-radius: 10px;
+    padding: 10px;
+    border: solid 1px var(--secondary-color);
+    font-size: 18px;
+    padding: 5px;
+}
+
+.nom-list button{
+    width: 100px;
+    height: 40px;
+    font-size: 14px;
+    border: solid 1px var(--primary-color);
+    background-color: #fff;
+    border-radius: 10px;
+    font-weight: 600;
+    cursor: pointer;
+    color: var(--primary-color);
+}
+
+.nom-list button:hover{
+    background-color: var(--primary-color);
+    color: #fff;
+}
+
+.saisir-list{
+    width: 100px;
+    height: 40px;
+    font-size: 14px;
+    border: solid 1px var(--primary-color);
+    background-color: #fff;
+    border-radius: 10px;
+    font-weight: 600;
+    cursor: pointer;
+    color: var(--primary-color);
+    align-self: center;
+    margin-bottom: 20px;
+}
+
+.saisir-list:hover{
+    background-color: var(--primary-color);
+    color: #fff;
+}
+
+.telecharger-list{
+    width: 150px;
+    height: 40px;
+    font-size: 14px;
+    border: solid 1px var(--primary-color);
+    background-color: #fff;
+    border-radius: 10px;
+    font-weight: 600;
+    cursor: pointer;
+    color: var(--primary-color);
+    align-self: center;
+    margin-bottom: 20px;
+    display: none;
+}
+
+.telecharger-list:hover{
+    background-color: var(--primary-color);
+    color: #fff;
+}
+
+.active-down-button{
+    display: block;
+}
+
+.desactive-type-button{
+    display: none;
+}
+.list-type{
+    width: 90%;
+    height: auto;
+    margin: auto;
+    display: none;
+    flex-direction: column;
+    gap: 20px;
+}
+.list-down{
+    width: 90%;
+    height: auto;
+    margin: auto;
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.desactive-down{
+    display: none;
+}
+
+.active-type{
+    display: flex;
+}
+#idFile{
+    border: none;
+}
+
+.disactive-type-btn{
+    display: none;
+}
+
+.active-down-btn{
+    margin-top: 10px;
+    display: block;
+}
+
+.add-list form label{
+    font-size: 20px;
+}
+
+/* .desactive-list-down{
+    display: none;
+} */
+.add-list form input{
+    height: 40px;
+    background-color: none;
+    border: solid 1px var(--secondary-color);
+    border-radius: 10px;
+    padding-left: 10px;
+}
+
+.add-list form select{
+    height: 40px;
+    background-color: none;
+    border: solid 1px var(--secondary-color);
+    border-radius: 10px;
+}
+
+.add-list form button{
+    width: 100px;
+    height: 40px;
+    font-size: 14px;
+    border: solid 1px var(--primary-color);
+    background-color: #fff;
+    border-radius: 10px;
+    font-weight: 600;
+    cursor: pointer;
+    color: var(--primary-color);
+}
+
+.add-list form button:hover{
+    background-color: var(--primary-color);
+    color: #fff;
+}
+
+.contraintes{
+    width: 50%;
+    height: 500px;
+    margin-top: 50px;
+    display: flex;
+    border: solid 2px var(--primary-color);
+    border-radius: 10px;
+    display: none;
+}
+.contraintes form{
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 100px;
+    padding: 20px;
+    padding-top: 100px;
+}
+.contrainte-1, .contrainte-2{
+    width: 100%;
+    height: 40px;
+    align-self: center;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.contrainte-1 select{
+    width: 450px;
+    height: 50px;
+    border: solid 1px var(--secondary-color);
+    border-radius: 10px;
+    font-size: 18px;
+    padding: 10px;
+}
+.contrainte-1 input{
+    width: 100px;
+    height: 50px;
+    border: solid 1px var(--secondary-color);
+    border-radius: 10px;
+}
+
+.contraintes h3{
+    font-weight: 400;
+    font-size: 18px;
+}
+
+.contrainte-2 input{
+    width: 250px;
+    border: solid 1px var(--secondary-color);
+    border-radius: 10px;
+    padding: 10px;
+}
+.contraintes form button{
+    width: 100px;
+    height: 40px;
+    font-size: 14px;
+    border: solid 1px var(--primary-color);
+    background-color: #fff;
+    border-radius: 10px;
+    font-weight: 600;
+    cursor: pointer;
+    color: var(--primary-color);
+    margin-top: 50px;
+}
+
+.contraintes form button:hover{
+    background-color: var(--primary-color);
+    color: #fff;
+}
+
+.list-categorie{
+    width: 500px;
+    height: auto;
+    border: solid 1px var(--primary-color);
+    border-radius: 10px;
+    margin-top: 50px;
+    display: flex;
+    padding: 50px;
+    flex-direction: column;
+    gap: 40px;
+    display: none;
+}
+.list-categorie form{
+    width: 100%;
+    height: 40px;
+    display: flex;
+    justify-content: space-between;
+}
+.list-categorie form input{
+    width: 300px;
+    height: 40px;
+    border: solid 1px var(--secondary-color);
+    border-radius: 10px;
+}
+
+.list-categorie form button{
+    width: 100px;
+    height: 40px;
+    font-size: 14px;
+    border: solid 1px var(--primary-color);
+    background-color: #fff;
+    border-radius: 10px;
+    font-weight: 600;
+    cursor: pointer;
+    color: var(--primary-color);
+}
+
+.list-categorie form button:hover{
+    background-color: var(--primary-color);
+    color: #fff;
+}

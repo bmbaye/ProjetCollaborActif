@@ -1,12 +1,33 @@
 @extends('layouts.app')
 
 @section('content')
-    <h1>Listes</h1>
-    <ul>
-        @foreach ($listes as $liste)
-            <li>
-                <a href="{{ route('listes.show', $liste->id) }}">{{ $liste->nomListe }}</a>
-            </li>
-        @endforeach
-    </ul>
+    <div class="lists">
+        <a class="list-item">
+            <input type="button" value="Liste1" name="Liste1">
+        </a>
+        <a class="list-item">
+            <input type="button" value="Liste1" name="Liste1">
+        </a>
+        <a class="list-item">
+            <input type="button" value="Liste1" name="Liste1">
+        </a>
+        <a class="list-item">
+            <input type="button" value="Liste1" name="Liste1">
+        </a>
+        <a class="list-item">
+            <input type="button" value="Liste1" name="Liste1">
+        </a>
+        <a class="list-item">
+            <input type="button" value="Liste1" name="Liste1">
+        </a>
+        <a class="list-item">
+            <input type="button" value="Liste1" name="Liste1">
+        </a>
+        <a class="list-item">
+            <input type="button" value="Liste1" name="Liste1">
+        </a>
+        <a class="list-item">
+            <input type="button" value="Liste1" name="Liste1">
+        </a>
+    </div>
 @endsection
