@@ -8,4 +8,11 @@ use Illuminate\Database\Eloquent\Model;
 class Membre extends Model
 {
     use HasFactory;
+
+    protected $fillable = ['nom', 'prenom', 'categorieId'];
+
+    public function listes()
+    {
+        return $this->belongsToMany(Liste::class, 'ListeMembre', 'membreId', 'listeId');
+    }
 }

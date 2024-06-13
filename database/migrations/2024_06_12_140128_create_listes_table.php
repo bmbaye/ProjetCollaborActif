@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('listes', function (Blueprint $table) {
             $table->id();
-            $table->string("nomListe");
+            $table->string("noListe");
             $table->string("nombreMembre");
             $table->timestamps();
         });

@@ -1,25 +1,26 @@
 <?php
-
 namespace App\Http\Controllers;
 
-use App\Http\Requests\ListeRequest;
 use App\Models\Liste;
-use Illuminate\Auth\Events\Validated;
 use Illuminate\Http\Request;
 
 class ListeController extends Controller
 {
-    public function index(){
-        $listes=Liste::all();
-        return $listes;
+    public function index()
+    {
+        $listes = Liste::all();
+        return view('listes.index', compact('listes'));
     }
-    public function create(){
-        return "";
+
+    public function show(Liste $liste)
+    {
+        $groupes = $liste->groupes;
+        return view('listes.show', compact('liste', 'groupes'));
     }
-    public function store(ListeRequest $liste){
-        $liste=Liste::create($liste->validated());
-    }
-    public function delete(ListeRequest $liste){
-        $liste->delete();
+
+    public function membres(Liste $liste)
+    {
+        $membres = $liste->membres;
+        return view('listes.membres', compact('liste', 'membres'));
     }
 }
